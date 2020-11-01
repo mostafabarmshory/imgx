@@ -29,6 +29,7 @@
 		"image cdn"
 	],
 	"require" : {
-		"pluf/imgx" : "7.0.x"
+		"pluf/imgx" : "7.0.x",
+		"pluf/http2" : "7.0.x"
 	}
 }

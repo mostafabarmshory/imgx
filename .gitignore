@@ -21,3 +21,4 @@ storage/tenant
 /wget-log
 /.composer.json.swp
 /composer.lock
+/composer.phar

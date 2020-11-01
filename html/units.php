@@ -6,6 +6,7 @@ use Pluf\Imgx\OriginMaker;
 use Pluf\Scion\Process\HttpProcess;
 use Pluf\Imgx\UrlDownloader;
 use Pluf\Imgx\UrlFetcher;
+use Pluf\Http\UriFactory;
 
 return [
     [
@@ -15,7 +16,7 @@ return [
         FileToHttpResponse::class,
         [
             new HttpProcess('#^/api/v2/cms/contents/(?P<id>\d+)/content$#'),
-            new Fetcher(__DIR__ . '/../tests/assets'),
+            new Fetcher('/tmp'),
             OriginMaker::class,
             Converter::class
         ],
@@ -25,7 +26,8 @@ return [
                 $hosts = [
                     'elbaan.com',
                     '7tooti.com',
-                    'viraweb123.ir'
+                    'viraweb123.ir',
+                    'cdn.viraweb123.ir'
                 ];
                 $uriFactory = new UriFactory();
                 $uri = $uriFactory->createUri($url);
@@ -35,7 +37,7 @@ return [
                 }
                 return $unitTracker->next();
             },
-            new UrlFetcher(__DIR__ . '/../tests/assets'),
+            new UrlFetcher('/tmp'),
             UrlDownloader::class,
             Converter::class
         ]

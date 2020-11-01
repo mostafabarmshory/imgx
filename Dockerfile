@@ -31,8 +31,6 @@ RUN apt-get update \
 	&& docker-php-ext-install bcmath \
 	&& docker-php-ext-install mysqli \
 	&& docker-php-ext-install pdo_mysql \
-	&& docker-php-ext-install pgsql \
-	&& docker-php-ext-install pdo_pgsql \
 	####################################################
 	# Imagick
 	####################################################
