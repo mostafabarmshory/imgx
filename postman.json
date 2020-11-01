@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "16009765-6944-49a5-aa81-efd35f5e6cbd",
+		"name": "imgx",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get by url",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/imgx/https://cdn.viraweb123.ir/api/v2/cdn/libs/templates@0.1.0/images/800x800.jpg",
+					"protocol": "{{url}}/imgx/https",
+					"host": [
+						"cdn",
+						"viraweb123",
+						"ir"
+					],
+					"path": [
+						"api",
+						"v2",
+						"cdn",
+						"libs",
+						"templates@0.1.0",
+						"images",
+						"800x800.jpg"
+					]
+				},
+				"description": "Gets an existed image"
+			},
+			"response": []
+		},
+		{
+			"name": "Get content",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/imgx/api/v2/cms/contents/1/content",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"imgx",
+						"api",
+						"v2",
+						"cms",
+						"contents",
+						"1",
+						"content"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
