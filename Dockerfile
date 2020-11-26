@@ -1,4 +1,3 @@
-
 # Dockerfile
 #
 # SEE: https://github.com/docker-library/php/blob/67efd89c36bf15cb5ba096213e0536b2cab5eb38/7.2/stretch/apache/Dockerfile
@@ -6,9 +5,6 @@
 #
 FROM php:7.4.11-apache
 LABEL MAINTAINER ViraWeb123 (info@viraweb123.com)
-
-ENV COMPOSER_ALLOW_SUPERUSER 1
-ENV COMPOSER_ALLOW_SUPERUSER 0
 
 ####################################################
 # Update os
@@ -55,7 +51,12 @@ RUN apt-get update \
 	&& rm -fR /tmp/* \
 	&& rm -rf /var/lib/apt/lists/\* 
 
-
+####################################################
+# Environment
+####################################################
+ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV COMPOSER_ALLOW_SUPERUSER 0
+ENV IMGX_ALLOWED_HOST *
 
 ####################################################
 # Installl composer
@@ -75,7 +76,7 @@ RUN cd /var/www/ \
 ####################################################
 COPY etc/ /var/www/etc/
 COPY html/ /var/www/html/
-
+COPY php.ini "$PHP_INI_DIR/php.ini"
 
 # Change directory to the html
 WORKDIR /var/www/html
