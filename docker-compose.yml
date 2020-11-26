@@ -5,9 +5,12 @@ services:
       build:
          context: .
       hostname: imgx
+      environment:
+         - IMGX_ALLOWED_HOST=*
       volumes:
          - "/home:/home"
          - ".:/var/www"
+         - "./tmp:/tmp"
       ports:
          - "80:80"
 

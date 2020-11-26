@@ -22,3 +22,4 @@ storage/tenant
 /.composer.json.swp
 /composer.lock
 /composer.phar
+/tmp/

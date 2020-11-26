@@ -1,6 +1,5 @@
 # Pluf ImgX
 
-
 Images present a slightly complicated case when it comes to delivering the perfect variation on each 
 device using a CDN.
 You need to consider the image format, image dimensions, image compression, aspect ratio, and a lot more, 
@@ -42,10 +41,21 @@ delivery network.
 The processing servers are the ones doing the heavy lifting in the image CDN setup. These would always be far fewer in
 number than the servers in a content delivery network and localized in a few regions.
 
-
 ## Quick start
+
+To run the latest versio of the ImgX run the following command:
+
+	docker run \
+		-p "80:80" \
+		-e "IMGX_ALLOWED_HOST=*" \
+		viraweb/imgx:latest
+
+And use CURL to check the server:
+
+	curl \
+		--output logo-h100-w100 \
+		http://localhost/https://viraweb123.ir/api/v2/cms/contents/logo/content?w=100&h=100
 
 ## Report bugs
 
-## Donate
-
+To report a bug, make an issue on the (github)[https://github.com/viraweb/imgx] project
