@@ -58,4 +58,4 @@ And use CURL to check the server:
 
 ## Report bugs
 
-To report a bug, make an issue on the (github)[https://github.com/viraweb/imgx] project
+To report a bug, make an issue on the [github](https://github.com/viraweb/imgx) project
